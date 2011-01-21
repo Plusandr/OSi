@@ -1,0 +1,3 @@
+Row-time: 692 ms
+Column-time: 4590 ms
+x = 10000 y = 10000
