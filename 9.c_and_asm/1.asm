@@ -20,8 +20,7 @@ _swap:
 	mov al,bl
 	mov bl,cl
 	cmp bl,0
-	je _result
-	jmp _algo
+	jne _algo
 _result:
 	pop ebp
 	ret
