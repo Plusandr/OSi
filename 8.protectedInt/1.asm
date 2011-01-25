@@ -35,11 +35,12 @@ _not_error:
 	mov eax,cr0
 	or eax,1h
 	mov cr0,eax
-	sti
 	jmp 8:label0
 label0:
+	sti
+label1:	
 	hlt
-	jmp label0
+	jmp label1
 GDTpointer:
 	dw GDTlen - 1
 	dd GDT
