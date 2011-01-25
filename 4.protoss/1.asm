@@ -28,9 +28,9 @@ _not_error:
 	mov eax,cr0
 	or eax,1h
 	mov cr0,eax
-	sti
 	jmp 8:label0
 label0:
+	sti
 	jmp 16:1234h
 	cli
 	hlt
