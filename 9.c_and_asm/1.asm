@@ -1,9 +1,8 @@
 format coff
 public print as "_print"
 print:
-;        xor eax,eax
-;        mov ax,str
-
+;euclid's algorithm
+;
 	push ebp
 	mov ebp,esp
 	mov eax,[ebp+4+4]
