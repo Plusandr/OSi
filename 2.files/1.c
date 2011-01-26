@@ -29,6 +29,8 @@ int main(int argc, char **argv)
 			if(!err)
 			{
 				fclose(in);
+				if(numbers!=NULL)
+					free(numbers);
 				printf("Read error: %s",argv[i]);
 				return 3;
 			}
@@ -41,7 +43,7 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				free (numbers);
+				free(numbers);
 				fclose(in);
 				printf("Error (re)allocating memory");
 				return 4;
