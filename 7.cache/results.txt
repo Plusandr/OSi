@@ -1,0 +1,11 @@
+near:
+
+real    0m0.076s
+user    0m0.060s
+sys     0m0.000s
+
+far:
+
+real    0m0.209s
+user    0m0.148s
+sys     0m0.016s
