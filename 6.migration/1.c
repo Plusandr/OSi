@@ -65,5 +65,8 @@ int main(int argc, const char **argv)
 		for(i = 0; i < x; i++) 
 			for(j = 0; j < y; j++)
 				c[i][j] = a[i][j]*b[j][i];
+	free(a);
+	free(b);
+	free(c);			
 	return 0;
 }
