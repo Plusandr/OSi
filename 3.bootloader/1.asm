@@ -6,6 +6,7 @@ _1:
 	mov sp,ax
 	sti
 
+	mov ax,0x7c00
 	mov es,ax
 	mov ax,0201h
 	mov cx,0002h
