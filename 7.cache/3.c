@@ -1,6 +1,7 @@
 #include <sched.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <pthread.h>
 
 volatile long long array[100];
@@ -10,9 +11,12 @@ void *counter_0()
 	for(array[0]=0; array[0]<100000000; array[0]++);
 	pthread_exit(NULL);
 }
-void *counter_50()
+void *counter_rand()
 {
-	for(array[50]=0; array[50]<100000000; array[50]++);
+	srand(time(NULL));
+	int id=rand()%100;
+	for(array[id]=0; array[id]<1000000; array[id]++)
+		id=rand()%100;
 	pthread_exit(NULL);
 }
 int main() 
@@ -30,7 +34,7 @@ int main()
 		printf("create thread 1 error");
 		return 1;
 	}
-	if (pthread_create(&thread2, NULL, counter_50))
+	if (pthread_create(&thread2, NULL, counter_rand))
 	{
 		printf("create thread 2 error");
 		return 2;

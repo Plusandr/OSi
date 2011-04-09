@@ -5,10 +5,14 @@
 
 volatile long long array[100];
 
-static void *counter(void *args) 
+void *counter_0()
 {
-	int id = (int)args;
-	for(array[id]=0; array[id]<100000000; array[id]++);
+	for(array[0]=0; array[0]<100000000; array[0]++);
+	pthread_exit(NULL);
+}
+void *counter_1()
+{
+	for(array[1]=0; array[1]<100000000; array[1]++);
 	pthread_exit(NULL);
 }
 int main() 
@@ -21,12 +25,12 @@ int main()
 	pthread_t thread1;
 	pthread_t thread2;
 
-	if (pthread_create(&thread1, NULL, counter, (void*)0))
+	if (pthread_create(&thread1, NULL, counter_0))
 	{
 		printf("create thread 1 error");
 		return 1;
 	}
-	if (pthread_create(&thread2, NULL, counter, (void*)1))
+	if (pthread_create(&thread2, NULL, counter_1))
 	{
 		printf("create thread 2 error");
 		return 2;
