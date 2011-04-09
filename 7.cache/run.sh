@@ -1,4 +1,4 @@
-echo 'close:'
+echo 'near:'
 time ./1
 echo 'far:'
 time ./2
